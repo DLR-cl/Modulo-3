@@ -14,4 +14,5 @@ export class ProveedorEntity {
 
   @Column()
   numeroContacto: string;
+  
 }

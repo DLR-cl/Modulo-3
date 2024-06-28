@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { join } from 'path';
+import { ProveedorEntity } from './entities/proveedor.entity';
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
@@ -19,7 +20,7 @@ import { join } from 'path';
       }),
       inject: [ConfigService],
     }),
-    TypeOrmModule.forFeature([]),
+    TypeOrmModule.forFeature([ProveedorEntity]),
   ],
   exports: [],
   providers: [],
