@@ -1,0 +1,61 @@
+.view-proveedor {
+    position: absolute;
+}
+
+.table-providers {
+    margin: 10rem;
+    border-color: black;
+}
+
+table, th, td{
+    border: 2px solid #D5DBDB;
+}
+
+.btn-secondary {
+    color: #626464;
+    border-color: #626262;
+    background-color: #D5DBDB;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row-reverse;
+
+    margin-top: 5rem;
+}
+
+/* Para el modal */
+.view-detail {
+    position: relative;
+}
+.details-container {
+    display: flex;
+    border: 1px solid #9fa4a4;
+    width: 40%;
+}
+
+
+.data-row {
+    text-align: center;
+    width: 50%;
+}
+
+.details-container p {
+    border: 1px solid #9fa4a4;
+    margin-bottom: 0rem;
+    background-color: #f0f0f0;
+
+}   
+
+.headers {
+    width: 50%;
+}
+
+.headers p {
+    background-color: #f0f0f0;
+    padding-left: 0.6rem;
+}
+
+.detail-button {
+    width: 40%;
+}
