@@ -1,18 +1,20 @@
 export class Proveedor{
 
-    name : string;
-    numberPhone : string;
+    nombre : string;
+    numeroContacto : string;
     email : string;
 
-    constructor(name : string, numberPhone : string, email : string){
-        this.name = name;
-        this.numberPhone = numberPhone;
+    constructor(nombre : string, numeroContacto : string, email : string){
+        this.nombre = nombre;
+        this.numeroContacto = numeroContacto;
         this.email = email;
     }
 }
 
 export class ProveedorResponse{
-    name : string = "";
-    numberPhone : string = "";
+    idProveedor : number = 0;
+    nombre : string = "";
+    numeroContacto : string = "";
     email : string = "";
 }
+

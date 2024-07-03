@@ -1,15 +1,29 @@
 <!-- Acá va la interfaz para agregar proveedor -->
 
-<form action="">
+<div class="container">
 
-    <label for="nombre">Nombre</label>
-    <input type="text" id="nombre">
+    <h2 >Agregar Proveedor</h2>
+    <form [formGroup]="regProvider" class="form">
+        
+    <div class="input-1">
+        <label for="nombre" class="label-nombre">Nombre</label>
+        <input type="text" id="nombre" class="input-nombre" formControlName="nombre">
+    </div>
+
+    <div class="input-1">
+        <label for="numContacto" class="label-contact">Numero de contacto</label>
+        <input type="text" id="numContacto" formControlName="numeroContacto" appFormValidator>
+    </div>
     
-    <label for="numContacto">Numero de contacto</label>
-    <input type="text" id="numContacto">
     
-    <label for="email">Email</label>
-    <input type="text" id="email">
+    <div class="input-1">
+        <label for="email" class="label-email">Email</label>
+        <input type="text" id="email" formControlName="email">
+    </div>
 
-
+    <div class="button">
+        <button class="btn btn-secondary" (click)="agregarProveedor()">Confirmar</button>
+    </div>
+    
 </form>
+</div>

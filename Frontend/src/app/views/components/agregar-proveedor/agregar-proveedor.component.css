@@ -1,0 +1,68 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-bottom: 4rem;
+}
+
+.container {
+    width: 32.4%;
+    margin-top: 10rem;
+}
+
+input {
+    border: 1px solid #D5DBDB;
+    height: 1.568rem;
+    padding: 0;
+    margin: 0;
+}
+
+.label-nombre {
+    padding-right: 9.4rem;
+    border: 1px solid #D5DBDB;
+    background-color: #f0f0f0;
+    padding-left: .6rem;
+
+}
+
+
+.label-contact {
+    padding-right: 3.9rem;
+    border: 1px solid #D5DBDB;
+    background-color: #f0f0f0;
+    padding-left: .6rem;
+
+
+}
+
+.label-email {
+    padding-right: 10.7rem;
+    border: 1px solid #D5DBDB;
+    background-color: #f0f0f0;
+    padding-left: .6rem;
+
+}
+
+.button {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 87.5%;
+    margin-top: 10rem;
+}
+.btn {
+    margin-top: 2rem;
+    width: 25%;
+    height: 3rem;
+    color: #626464;
+    border-color: #626262;
+    background-color: #f0f0f0;
+    
+}
+
+input:focus {
+    border: none;
+    outline: none;
+    border: 1px solid #D5DBDB;
+}

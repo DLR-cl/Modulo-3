@@ -1,65 +1,79 @@
 <!-- Acá va la lista de proveedores -->
-<div class="container view-proveedor">
+<main class="container view-proveedor" >
 
-    <div class="container table-providers">
-        
+    <div class="container table-providers" *ngIf="!showDetails">
+        <h2>Proveedores</h2>
         <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Ver Detalles</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Eliminar</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>--</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>--</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>el pepe</td>
-                <td>el pepe</td>
-                <td>---</td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <div class="button-container">
-        <button class="btn btn-secondary"> Agregar Proveedor</button>
-    </div>
-</div>
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col" class="logos-table">Ver Detalles</th>
+                    <th scope="col" class="logos-table">Editar</th>
+                    <th scope="col" class="logos-table">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prov of proveedores">
+                    <td scope="row" class="nameProv">{{prov.nombre}}</td>
+                    <td class="logos-table">
+                        
+                        <button class="button-logos" (click)="recuperarDetallesDelProveedor(prov.idProveedor)">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle"
+                            width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                            <path d="M12 9h.01" />
+                            <path d="M11 12h1v4h1" />
+                        </svg>
+                        </button>
+                    </td>
+                    <td class="logos-table" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-pencil" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <path d="M10 18l5 -5a1.414 1.414 0 0 0 -2 -2l-5 5v2h2z" />
+                      </svg></td>
+                    <td class="logos-table" ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 7l16 0" />
+                        <path d="M10 11l0 6" />
+                        <path d="M14 11l0 6" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                      </svg></td>
+                </tr>
 
-<div class="container view-detail">
-    
-    <h2>Detalles del Proveedor</h2>
-    <div class="details-container">
-        
-        <div class="headers">
-            <p>ID</p>
-            <p>Nombre</p>
-            <p>Numero de Contacto</p>
-            <p>Email</p>
-        </div>
-        
-        <div class="data-row">
-            <p>1</p>
-            <p>pedro</p>
-            <p>122</p>
-            <p>arroba</p>
+
+            </tbody>
+        </table>
+
+        <div class="button-container">
+            <button class="btn btn-secondary" (click)="goToAgregarProveedor()"> Agregar Proveedor</button>
         </div>
     </div>
-    <div class="button-container detail-button">
-        <button class="btn btn-secondary">Volver</button>
+
+    <div class="container view-detail" *ngIf="showDetails">
+
+        <h2>Detalles del Proveedor</h2>
+        <div class="details-container">
+
+            <div class="headers">
+                <p>ID</p>
+                <p>Nombre</p>
+                <p>Numero de Contacto</p>
+                <p>Email</p>
+            </div>
+
+            <div class="data-row">
+                <p>{{proveedor.idProveedor}}</p>
+                <p>{{proveedor.nombre}}</p>
+                <p>{{proveedor.numeroContacto}}</p>
+                <p>{{proveedor.email}}</p>
+            </div>
+        </div>
+        <div class="button-container detail-button">
+            <button class="btn btn-secondary" (click)="volver()">Volver</button>
+        </div>
     </div>
-</div>
-</div>
+</main>
