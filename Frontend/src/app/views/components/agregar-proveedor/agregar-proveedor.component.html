@@ -7,22 +7,36 @@
         
     <div class="input-1">
         <label for="nombre" class="label-nombre">Nombre</label>
-        <input type="text" id="nombre" class="input-nombre" formControlName="nombre">
+        <input type="text" id="nombre" class="input-nombre" formControlName="nombre" 
+        [ngClass]="{
+            'is-invalid': regProvider.get('nombre')?.touched && regProvider.get('nombre')?.invalid,
+            'is-valid': regProvider.get('nombre')?.touched && regProvider.get('nombre')?.valid
+          }">
     </div>
 
     <div class="input-1">
         <label for="numContacto" class="label-contact">Numero de contacto</label>
-        <input type="text" id="numContacto" formControlName="numeroContacto" appFormValidator>
+        <input type="text" id="numContacto" formControlName="numeroContacto" appFormValidator
+        [ngClass]="{
+            'is-invalid': regProvider.get('numeroContacto')?.touched && regProvider.get('numeroContacto')?.invalid,
+            'is-valid': regProvider.get('numeroContacto')?.touched && regProvider.get('numeroContacto')?.valid
+          }" placeholder="911111111 o 56911111111">
     </div>
     
     
     <div class="input-1">
         <label for="email" class="label-email">Email</label>
-        <input type="text" id="email" formControlName="email">
+        <input type="text" id="email" formControlName="email" [ngClass]="{
+            'is-invalid': regProvider.get('email')?.touched && regProvider.get('email')?.invalid,
+            'is-valid': regProvider.get('email')?.touched && regProvider.get('email')?.valid
+          }">
     </div>
 
     <div class="button">
-        <button class="btn btn-secondary" (click)="agregarProveedor()">Confirmar</button>
+        <button class="btn btn-secondary" (click)="agregarProveedor()"
+        [disabled]="regProvider.controls['nombre'].invalid || 
+        regProvider.controls['numeroContacto'].invalid ||
+        regProvider.controls['email'].invalid">Confirmar</button>
     </div>
     
 </form>

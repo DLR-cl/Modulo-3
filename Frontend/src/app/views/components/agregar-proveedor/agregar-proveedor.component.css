@@ -66,3 +66,11 @@ input:focus {
     outline: none;
     border: 1px solid #D5DBDB;
 }
+
+.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  .is-valid {
+    border-color: #28a745;
+  }

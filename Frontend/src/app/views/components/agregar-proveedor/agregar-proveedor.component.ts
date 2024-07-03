@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, RequiredValidator, Validat
 import { ProveedoresService } from '../../services/proveedores.service';
 import { CommonModule } from '@angular/common';
 import { FormValidatorDirective } from '../../../directives/form-validator.directive';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-agregar-proveedor',
   standalone: true,
@@ -12,8 +13,12 @@ import { FormValidatorDirective } from '../../../directives/form-validator.direc
 })
 export class AgregarProveedorComponent {
 
+
+  constructor(private router : Router){
+
+  }
   regProvider : FormGroup =  new FormGroup({
-    nombre : new FormControl<string>('', Validators.required),
+    nombre : new FormControl<string>('', [Validators.required]),
     numeroContacto : new FormControl<string>('', [Validators.required, Validators.maxLength(11), Validators.minLength(9)]),
     email : new FormControl<string>('', [Validators.email, Validators.required]),
   })
@@ -36,6 +41,8 @@ export class AgregarProveedorComponent {
         console.log(data);
       }
     )
+
+    this.router.navigateByUrl('proveedores')
     
   }
 }
